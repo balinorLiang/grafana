@@ -1668,7 +1668,10 @@
     "tree": {
       "collapse": "Collapse",
       "expand": "Expand",
-      "headline": "Recommended",
+      "headline": {
+        "recommended": "Recommended",
+        "results": "Results"
+      },
       "search": "Search"
     }
   },
