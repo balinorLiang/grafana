@@ -47,6 +47,10 @@ import {
   queryDashboardsExpand,
   renderDashboard,
   getDashboardsClear,
+  getNotFoundForScope,
+  queryDashboardsSearch,
+  getNotFoundForFilter,
+  getClustersSlothClusterEastSelect,
 } from './testUtils';
 
 jest.mock('@grafana/runtime', () => ({
@@ -313,6 +317,27 @@ describe('ScopesScene', () => {
         expect(queryAllDashboard('6')).toHaveLength(1);
         expect(queryAllDashboard('7')).toHaveLength(1);
         expect(queryAllDashboard('8')).toHaveLength(1);
+      });
+
+      it('Does not show the input when there are no dashboards found for scope', async () => {
+        await userEvents.click(getDashboardsExpand());
+        await userEvents.click(getFiltersInput());
+        await userEvents.click(getClustersExpand());
+        await userEvents.click(getClustersSlothClusterEastSelect());
+        await userEvents.click(getFiltersApply());
+        expect(getNotFoundForScope()).toBeInTheDocument();
+        expect(queryDashboardsSearch()).not.toBeInTheDocument();
+      });
+
+      it('Does show the input and a message when there are no dashboards found for filter', async () => {
+        await userEvents.click(getDashboardsExpand());
+        await userEvents.click(getFiltersInput());
+        await userEvents.click(getApplicationsExpand());
+        await userEvents.click(getApplicationsSlothPictureFactorySelect());
+        await userEvents.click(getFiltersApply());
+        await userEvents.type(getDashboardsSearch(), 'unknown');
+        expect(queryDashboardsSearch()).toBeInTheDocument();
+        expect(getNotFoundForFilter()).toBeInTheDocument();
       });
     });
 

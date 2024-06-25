@@ -1659,6 +1659,7 @@
     "suggestedDashboards": {
       "clear": "Clear search",
       "loading": "Loading dashboards",
+      "noResults": "No dashboards found",
       "search": "Search",
       "toggle": {
         "collapse": "Collapse scope filters",
