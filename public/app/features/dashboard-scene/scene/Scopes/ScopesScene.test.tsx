@@ -50,7 +50,7 @@ import {
   getNotFoundForScope,
   queryDashboardsSearch,
   getNotFoundForFilter,
-  getClustersSlothClusterEastSelect,
+  getClustersSlothClusterEastRadio,
 } from './testUtils';
 
 jest.mock('@grafana/runtime', () => ({
@@ -323,7 +323,7 @@ describe('ScopesScene', () => {
         await userEvents.click(getDashboardsExpand());
         await userEvents.click(getFiltersInput());
         await userEvents.click(getClustersExpand());
-        await userEvents.click(getClustersSlothClusterEastSelect());
+        await userEvents.click(getClustersSlothClusterEastRadio());
         await userEvents.click(getFiltersApply());
         expect(getNotFoundForScope()).toBeInTheDocument();
         expect(queryDashboardsSearch()).not.toBeInTheDocument();
