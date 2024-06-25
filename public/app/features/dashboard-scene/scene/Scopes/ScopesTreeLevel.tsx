@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import { GrafanaTheme2 } from '@grafana/data';
-import { Checkbox, Icon, IconButton, Input, RadioButtonDot, useStyles2 } from '@grafana/ui';
+import { Checkbox, Icon, Input, RadioButtonDot, useStyles2 } from '@grafana/ui';
 import { t, Trans } from 'app/core/internationalization';
 
 import { NodesMap, TreeScope } from './types';
@@ -100,21 +100,25 @@ export function ScopesTreeLevel({
                     )
                   ) : null}
 
-                  {childNode.isExpandable && (
-                    <IconButton
+                  {childNode.isExpandable ? (
+                    <button
+                      className={styles.itemExpand}
                       disabled={anyChildSelected && !childNode.isExpanded}
-                      name={!childNode.isExpanded ? 'angle-right' : 'angle-down'}
+                      data-testid={`scopes-tree-${childNode.name}-expand`}
                       aria-label={
                         childNode.isExpanded ? t('scopes.tree.collapse', 'Collapse') : t('scopes.tree.expand', 'Expand')
                       }
-                      data-testid={`scopes-tree-${childNode.name}-expand`}
                       onClick={() => {
                         onNodeUpdate(childNodePath, !childNode.isExpanded, childNode.query);
                       }}
-                    />
-                  )}
+                    >
+                      <Icon name={!childNode.isExpanded ? 'angle-right' : 'angle-down'} />
 
-                  <span data-testid={`scopes-tree-${childNode.name}-title`}>{childNode.title}</span>
+                      {childNode.title}
+                    </button>
+                  ) : (
+                    <span data-testid={`scopes-tree-${childNode.name}-title`}>{childNode.title}</span>
+                  )}
                 </div>
 
                 <div className={styles.itemChildren}>
@@ -160,6 +164,15 @@ const getStyles = (theme: GrafanaTheme2) => {
       '& > label': css({
         gap: 0,
       }),
+    }),
+    itemExpand: css({
+      alignItems: 'center',
+      background: 'none',
+      border: 0,
+      display: 'flex',
+      gap: theme.spacing(1),
+      margin: 0,
+      padding: 0,
     }),
     itemChildren: css({
       paddingLeft: theme.spacing(4),
