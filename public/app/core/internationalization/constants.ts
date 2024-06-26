@@ -22,8 +22,8 @@ interface LanguageDefinitions {
 
 export const LANGUAGES: LanguageDefinitions[] = [
   {
-    code: CHINESE_SIMPLIFIED,
-    name: '中文（简体）',
+    code: ENGLISH_US,
+    name: 'English',
     loader: () => Promise.resolve({}),
   },
 
@@ -46,9 +46,9 @@ export const LANGUAGES: LanguageDefinitions[] = [
   },
 
   {
-    code: ENGLISH_US,
-    name: 'English',
-    loader: () => import('../../../locales/en-US/grafana.json'),
+    code: CHINESE_SIMPLIFIED,
+    name: '中文（简体）',
+    loader: () => import('../../../locales/zh-Hans/grafana.json'),
   },
 ];
 
