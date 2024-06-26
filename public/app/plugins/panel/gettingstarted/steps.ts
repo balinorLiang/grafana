@@ -5,7 +5,7 @@ import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import { SetupStep } from './types';
 
 const step1TutorialTitle = 'Grafana基础知识';
-const step2TutorialTitle = 'Create users and teams';
+const step2TutorialTitle = '创建用户和团队';
 const keyPrefix = 'getting.started.';
 const step1Key = `${keyPrefix}${step1TutorialTitle.replace(' ', '-').trim().toLowerCase()}`;
 const step2Key = `${keyPrefix}${step2TutorialTitle.replace(' ', '-').trim().toLowerCase()}`;
@@ -68,15 +68,15 @@ export const getSteps = (): SetupStep[] => [
     heading: 'Setup complete!',
     subheading:
       'All necessary steps to use Grafana are done. Now tackle advanced steps or make the best use of this home dashboard – it is, after all, a fully customizable dashboard – and remove this panel.',
-    title: 'Advanced',
-    info: ' Manage your users and teams and add plugins. These steps are optional',
+    title: '高级',
+    info: ' 管理您的用户和团队并添加插件。这些步骤是可选的',
     done: false,
     cards: [
       {
         type: 'tutorial',
-        heading: 'Users',
-        title: 'Create users and teams',
-        info: 'Learn to organize your users in teams and manage resource access and roles.',
+        heading: '用户',
+        title: '创建用户和团队',
+        info: '学习在团队中组织您的用户，并管理资源访问和角色。',
         href: 'https://grafana.com/tutorials/create-users-and-teams',
         icon: 'users-alt',
         key: step2Key,
@@ -86,7 +86,7 @@ export const getSteps = (): SetupStep[] => [
       {
         type: 'docs',
         heading: 'plugins',
-        title: 'Find and install plugins',
+        title: '查找并安装插件',
         learnHref: 'https://grafana.com/docs/grafana/latest/plugins/installation',
         href: 'plugins',
         icon: 'plug',
