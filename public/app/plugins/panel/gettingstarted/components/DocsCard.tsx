@@ -33,7 +33,7 @@ export const DocsCard = ({ card }: Props) => {
         target="_blank"
         rel="noreferrer"
       >
-        Learn how in the docs <Icon name="external-link-alt" />
+        在文档中了解如何操作 <Icon name="external-link-alt" />
       </a>
     </div>
   );

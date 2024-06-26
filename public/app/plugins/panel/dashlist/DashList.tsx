@@ -124,17 +124,17 @@ export function DashList(props: PanelProps<PanelOptions>) {
 
   const dashboardGroups: DashboardGroup[] = [
     {
-      header: 'Starred dashboards',
+      header: '星标仪表盘',
       dashboards: starredDashboards,
       show: showStarred,
     },
     {
-      header: 'Recently viewed dashboards',
+      header: '最近浏览的仪表板',
       dashboards: recentDashboards,
       show: showRecentlyViewed,
     },
     {
-      header: 'Search',
+      header: '查询',
       dashboards: searchedDashboards,
       show: showSearch,
     },

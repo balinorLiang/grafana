@@ -91,7 +91,7 @@ export class GettingStarted extends PureComponent<PanelProps, State> {
         ) : (
           <>
             <Button variant="secondary" fill="text" className={styles.dismiss} onClick={this.dismiss}>
-              Remove this panel
+              移除此面板
             </Button>
             {currentStep === steps.length - 1 && (
               <Button

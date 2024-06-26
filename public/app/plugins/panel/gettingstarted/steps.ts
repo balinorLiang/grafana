@@ -4,7 +4,7 @@ import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 
 import { SetupStep } from './types';
 
-const step1TutorialTitle = 'Grafana fundamentals';
+const step1TutorialTitle = 'Grafana基础知识';
 const step2TutorialTitle = 'Create users and teams';
 const keyPrefix = 'getting.started.';
 const step1Key = `${keyPrefix}${step1TutorialTitle.replace(' ', '-').trim().toLowerCase()}`;
@@ -12,17 +12,17 @@ const step2Key = `${keyPrefix}${step2TutorialTitle.replace(' ', '-').trim().toLo
 
 export const getSteps = (): SetupStep[] => [
   {
-    heading: 'Welcome to Grafana',
-    subheading: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
-    title: 'Basic',
-    info: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
+    heading: '欢迎使用Grafana',
+    subheading: '以下步骤将指导您快速完成设置Grafana安装。',
+    title: '基础',
+    info: '以下步骤将指导您快速完成设置Grafana安装。',
     done: false,
     cards: [
       {
         type: 'tutorial',
-        heading: 'Data source and dashboards',
+        heading: '数据源和仪表盘',
         title: step1TutorialTitle,
-        info: 'Set up and understand Grafana if you have no prior experience. This tutorial guides you through the entire process and covers the “Data source” and “Dashboards” steps to the right.',
+        info: '如果您之前没有使用过 Grafana，请先设置并了解它。本教程将指导您完成整个过程，并涵盖右侧的“数据源”和“仪表盘”步骤。',
         href: 'https://grafana.com/tutorials/grafana-fundamentals',
         icon: 'grafana',
         check: () => Promise.resolve(store.get(step1Key)),
@@ -31,7 +31,7 @@ export const getSteps = (): SetupStep[] => [
       },
       {
         type: 'docs',
-        title: 'Add your first data source',
+        title: '添加您的第一个数据源',
         heading: 'data sources',
         icon: 'database',
         learnHref: 'https://grafana.com/docs/grafana/latest/features/datasources/add-a-data-source',
@@ -52,7 +52,7 @@ export const getSteps = (): SetupStep[] => [
       {
         type: 'docs',
         heading: 'dashboards',
-        title: 'Create your first dashboard',
+        title: '添加您的第一个仪表盘',
         icon: 'apps',
         href: 'dashboard/new',
         learnHref: 'https://grafana.com/docs/grafana/latest/guides/getting_started/#create-a-dashboard',
