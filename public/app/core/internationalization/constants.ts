@@ -7,7 +7,7 @@ export const GERMAN_GERMANY = 'de-DE';
 export const CHINESE_SIMPLIFIED = 'zh-Hans';
 export const PSEUDO_LOCALE = 'pseudo-LOCALE';
 
-export const DEFAULT_LANGUAGE = ENGLISH_US;
+export const DEFAULT_LANGUAGE = CHINESE_SIMPLIFIED;
 
 interface LanguageDefinitions {
   /** IETF language tag for the language e.g. en-US */
